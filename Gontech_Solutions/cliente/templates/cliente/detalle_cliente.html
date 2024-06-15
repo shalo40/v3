@@ -1,17 +1,15 @@
 <!-- cliente/templates/cliente/detalle_cliente.html -->
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Detalle del Cliente</title>
-</head>
-<body>
-    <h1>Detalle del Cliente</h1>
-    <p><strong>Nombre:</strong> {{ cliente.nombre_completo }}</p>
-    <p><strong>Cargo:</strong> {{ cliente.cargo }}</p>
-    <p><strong>Empresa:</strong> {{ cliente.empresa }}</p>
-    <p><strong>Teléfono:</strong> {{ cliente.numero_telefono }}</p>
-    <p><strong>Correo Electrónico:</strong> {{ cliente.correo_electronico }}</p>
-    <a href="{% url 'lista_clientes' %}">Volver a la lista</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Detalle del Cliente{% endblock %}
+
+{% block content %}
+<h1>Detalle del Cliente</h1>
+<p><strong>Nombre Completo:</strong> {{ cliente.nombre_completo }}</p>
+<p><strong>Cargo:</strong> {{ cliente.cargo }}</p>
+<p><strong>Empresa:</strong> {{ cliente.empresa }}</p>
+<p><strong>Número de Teléfono:</strong> {{ cliente.numero_telefono }}</p>
+<p><strong>Correo Electrónico:</strong> {{ cliente.correo_electronico }}</p>
+<a href="{% url 'lista_clientes' %}" class="btn btn-primary">Volver a la lista</a>
+{% endblock %}
