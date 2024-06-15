@@ -1,19 +1,17 @@
 <!-- mesa_de_ayuda/templates/mesa_de_ayuda/lista_tickets.html -->
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Lista de Tickets</title>
-</head>
-<body>
-    <h1>Lista de Tickets</h1>
-    <ul>
-        {% for ticket in tickets %}
-            <li>
-                <a href="{% url 'detalle_ticket' ticket.id %}">{{ ticket.descripcion_problema }}</a>
-            </li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'crear_ticket' %}">Crear nuevo ticket</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Lista de Tickets{% endblock %}
+
+{% block content %}
+<h1>Lista de Tickets</h1>
+<ul class="list-group">
+    {% for ticket in tickets %}
+        <li class="list-group-item">
+            <a href="{% url 'detalle_ticket' ticket.id %}">{{ ticket.descripcion_problema }}</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'crear_ticket' %}" class="btn btn-success mt-3">Crear nuevo ticket</a>
+{% endblock %}
