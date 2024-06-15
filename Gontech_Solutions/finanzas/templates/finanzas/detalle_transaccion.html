@@ -1,0 +1,16 @@
+<!-- finanzas/templates/finanzas/detalle_transaccion.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalle de la Transacción</title>
+</head>
+<body>
+    <h1>Detalle de la Transacción</h1>
+    <p><strong>Cliente:</strong> {{ transaccion.cliente.nombre_completo }}</p>
+    <p><strong>Tipo de Transacción:</strong> {{ transaccion.tipo_transaccion }}</p>
+    <p><strong>Monto:</strong> {{ transaccion.monto }}</p>
+    <p><strong>Descripción:</strong> {{ transaccion.descripcion }}</p>
+    <a href="{% url 'lista_transacciones' %}">Volver a la lista</a>
+</body>
+</html>

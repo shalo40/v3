@@ -8,4 +8,5 @@ urlpatterns = [
     path('mesa_de_ayuda/', include('mesa_de_ayuda.urls')),
     path('tecnico/', include('tecnico.urls')),
     path('cliente/', include('cliente.urls')),
+    path('finanzas/', include('finanzas.urls')),
 ]

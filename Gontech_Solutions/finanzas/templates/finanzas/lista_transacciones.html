@@ -1,0 +1,19 @@
+<!-- finanzas/templates/finanzas/lista_transacciones.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Transacciones</title>
+</head>
+<body>
+    <h1>Lista de Transacciones</h1>
+    <ul>
+        {% for transaccion in transacciones %}
+            <li>
+                <a href="{% url 'detalle_transaccion' transaccion.id %}">{{ transaccion.descripcion }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'crear_transaccion' %}">Crear nueva transacción</a>
+</body>
+</html>
