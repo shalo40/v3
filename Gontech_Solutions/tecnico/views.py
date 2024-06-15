@@ -4,15 +4,19 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.models import User
 from .models import PerfilTecnico
 from .forms import PerfilTecnicoForm
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def lista_tecnicos(request):
     tecnicos = PerfilTecnico.objects.all()
     return render(request, 'tecnico/lista_tecnicos.html', {'tecnicos': tecnicos})
 
+@login_required
 def detalle_tecnico(request, tecnico_id):
     tecnico = get_object_or_404(PerfilTecnico, id=tecnico_id)
     return render(request, 'tecnico/detalle_tecnico.html', {'tecnico': tecnico})
 
+@login_required
 def generar_nombre_usuario(nombre_completo):
     nombres = nombre_completo.split()
     if len(nombres) < 2:
@@ -23,6 +27,7 @@ def generar_nombre_usuario(nombre_completo):
     mitad_apellido = primer_apellido[:len(primer_apellido)//2].lower()
     return mitad_nombre + mitad_apellido
 
+@login_required
 def crear_tecnico(request):
     if request.method == 'POST':
         form = PerfilTecnicoForm(request.POST)
@@ -40,6 +45,7 @@ def crear_tecnico(request):
         form = PerfilTecnicoForm()
     return render(request, 'tecnico/crear_tecnico.html', {'form': form})
 
+@login_required
 def editar_tecnico(request, tecnico_id):
     tecnico = get_object_or_404(PerfilTecnico, id=tecnico_id)
     if request.method == 'POST':
