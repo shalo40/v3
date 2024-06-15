@@ -1,0 +1,17 @@
+<!-- mesa_de_ayuda/templates/mesa_de_ayuda/detalle_ticket.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalle del Ticket</title>
+</head>
+<body>
+    <h1>Detalle del Ticket</h1>
+    <p><strong>Cliente:</strong> {{ ticket.cliente.nombre_completo }}</p>
+    <p><strong>Descripción:</strong> {{ ticket.descripcion_problema }}</p>
+    <p><strong>Tipo de Servicio:</strong> {{ ticket.tipo_servicio }}</p>
+    <p><strong>Urgencia:</strong> {{ ticket.urgencia_servicio }}</p>
+    <p><strong>Plazo Deseado:</strong> {{ ticket.plazo_deseado }}</p>
+    <a href="{% url 'lista_tickets' %}">Volver a la lista</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!-- tecnico/templates/tecnico/detalle_tecnico.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalle del Técnico</title>
+</head>
+<body>
+    <h1>Detalle del Técnico</h1>
+    <p><strong>Nombre:</strong> {{ tecnico.nombre_completo }}</p>
+    <p><strong>Fecha de Nacimiento:</strong> {{ tecnico.fecha_de_nacimiento }}</p>
+    <p><strong>Dirección:</strong> {{ tecnico.direccion }}</p>
+    <p><strong>Celular:</strong> {{ tecnico.celular }}</p>
+    <p><strong>Correo Electrónico:</strong> {{ tecnico.correo_electronico }}</p>
+    <p><strong>Estado:</strong> {{ tecnico.estado }}</p>
+    <a href="{% url 'lista_tecnicos' %}">Volver a la lista</a>
+</body>
+</html>

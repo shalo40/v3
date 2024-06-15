@@ -1,0 +1,19 @@
+<!-- cliente/templates/cliente/lista_clientes.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Clientes</title>
+</head>
+<body>
+    <h1>Lista de Clientes</h1>
+    <ul>
+        {% for cliente in clientes %}
+            <li>
+                <a href="{% url 'detalle_cliente' cliente.id %}">{{ cliente.nombre_completo }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'crear_cliente' %}">Crear nuevo cliente</a>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!-- tecnico/templates/tecnico/editar_tecnico.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Técnico</title>
+</head>
+<body>
+    <h1>Editar Técnico</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+    <a href="{% url 'lista_tecnicos' %}">Volver a la lista</a>
+</body>
+</html>

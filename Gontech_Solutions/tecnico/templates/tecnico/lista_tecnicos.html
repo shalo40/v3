@@ -1,0 +1,19 @@
+<!-- tecnico/templates/tecnico/lista_tecnicos.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Técnicos</title>
+</head>
+<body>
+    <h1>Lista de Técnicos</h1>
+    <ul>
+        {% for tecnico in tecnicos %}
+            <li>
+                <a href="{% url 'detalle_tecnico' tecnico.id %}">{{ tecnico.nombre_completo }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'crear_tecnico' %}">Crear nuevo técnico</a>
+</body>
+</html>

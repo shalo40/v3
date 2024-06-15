@@ -1,0 +1,17 @@
+<!-- tecnico/templates/tecnico/crear_tecnico.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear Técnico</title>
+</head>
+<body>
+    <h1>Crear Técnico</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Crear</button>
+    </form>
+    <a href="{% url 'lista_tecnicos' %}">Volver a la lista</a>
+</body>
+</html>

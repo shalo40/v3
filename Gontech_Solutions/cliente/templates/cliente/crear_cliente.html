@@ -1,0 +1,17 @@
+<!-- cliente/templates/cliente/crear_cliente.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear Cliente</title>
+</head>
+<body>
+    <h1>Crear Cliente</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Crear</button>
+    </form>
+    <a href="{% url 'lista_clientes' %}">Volver a la lista</a>
+</body>
+</html>
