@@ -1,20 +1,18 @@
 <!-- finanzas/templates/finanzas/lista_transacciones.html -->
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Lista de Transacciones</title>
-</head>
-<body>
-    <h1>Lista de Transacciones</h1>
-    <ul>
-        {% for transaccion in transacciones %}
-            <li>
-                <a href="{% url 'detalle_transaccion' transaccion.id %}">{{ transaccion.descripcion }}</a>
-            </li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'crear_transaccion' %}">Crear nueva transacción</a>
-    <a href="{% url 'generar_reporte_pdf' %}">Generar reporte PDF</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Lista de Transacciones{% endblock %}
+
+{% block content %}
+<h1>Lista de Transacciones</h1>
+<ul class="list-group">
+    {% for transaccion in transacciones %}
+        <li class="list-group-item">
+            <a href="{% url 'detalle_transaccion' transaccion.id %}">{{ transaccion.descripcion }}</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'crear_transaccion' %}" class="btn btn-success mt-3">Crear nueva transacción</a>
+<a href="{% url 'generar_reporte_pdf' %}" class="btn btn-primary mt-3">Generar reporte PDF</a>
+{% endblock %}
