@@ -120,5 +120,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Gontech_Solutions/settings.py
 
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'dashboard_administrador'
 LOGOUT_REDIRECT_URL = 'login'

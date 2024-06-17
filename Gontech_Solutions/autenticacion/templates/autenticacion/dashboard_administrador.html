@@ -1,0 +1,17 @@
+<!-- autenticacion/templates/autenticacion/dashboard_administrador.html -->
+
+{% extends "base.html" %}
+
+{% block title %}Dashboard Administrador{% endblock %}
+
+{% block content %}
+<h1>Dashboard Administrador</h1>
+<p>Bienvenido, {{ user.username }}. Aquí puedes gestionar usuarios, proyectos, tickets y ver reportes y estadísticas.</p>
+<ul>
+    <li><a href="{% url 'gestion_usuarios' %}">Gestión de Usuarios</a></li>
+    <li><a href="{% url 'gestion_proyectos' %}">Gestión de Proyectos</a></li>
+    <li><a href="{% url 'lista_tickets' %}">Lista de Tickets</a></li>
+    <li><a href="{% url 'comunicacion_clientes' %}">Comunicación con Clientes</a></li>
+    <li><a href="{% url 'reportes_estadisticas' %}">Reportes y Estadísticas</a></li>
+</ul>
+{% endblock %}

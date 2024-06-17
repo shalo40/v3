@@ -1,0 +1,16 @@
+<!-- autenticacion/templates/autenticacion/dashboard_cliente.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Dashboard Cliente{% endblock %}
+
+{% block content %}
+<h1>Dashboard Cliente</h1>
+<p>Bienvenido, {{ user.username }}. Aquí puedes ver tus proyectos, solicitar servicios y gestionar facturación y pagos.</p>
+<ul>
+    <li><a href="{% url 'vista_proyectos' %}">Vista de Proyectos</a></li>
+    <li><a href="{% url 'solicitud_servicios' %}">Solicitud de Servicios</a></li>
+    <li><a href="{% url 'mensajes' %}">Mensajes</a></li>
+    <li><a href="{% url 'facturacion_pagos' %}">Facturación y Pagos</a></li>
+</ul>
+{% endblock %}

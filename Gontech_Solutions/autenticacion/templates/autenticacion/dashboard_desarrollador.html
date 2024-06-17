@@ -1,0 +1,15 @@
+<!-- autenticacion/templates/autenticacion/dashboard_desarrollador.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Dashboard Desarrollador{% endblock %}
+
+{% block content %}
+<h1>Dashboard Desarrollador</h1>
+<p>Bienvenido, {{ user.username }}. Aquí puedes ver y actualizar tareas, así como documentar proyectos.</p>
+<ul>
+    <li><a href="{% url 'vista_tareas' %}">Vista de Tareas</a></li>
+    <li><a href="{% url 'actualizacion_estado' %}">Actualización de Estado</a></li>
+    <li><a href="{% url 'documentacion_proyectos' %}">Documentación de Proyectos</a></li>
+</ul>
+{% endblock %}

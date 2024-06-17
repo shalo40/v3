@@ -1,0 +1,16 @@
+<!-- autenticacion/templates/autenticacion/dashboard_gerente.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Dashboard Gerente de Proyecto{% endblock %}
+
+{% block content %}
+<h1>Dashboard Gerente de Proyecto</h1>
+<p>Bienvenido, {{ user.username }}. Aquí puedes gestionar proyectos, tareas y comunicarte con clientes.</p>
+<ul>
+    <li><a href="{% url 'gestion_proyectos' %}">Gestión de Proyectos</a></li>
+    <li><a href="{% url 'gestion_tareas' %}">Gestión de Tareas</a></li>
+    <li><a href="{% url 'comunicacion_clientes' %}">Comunicación con Clientes</a></li>
+    <li><a href="{% url 'reportes_progreso' %}">Reportes de Progreso</a></li>
+</ul>
+{% endblock %}

@@ -1,27 +1,31 @@
 <!-- templates/base.html -->
 
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Gontech Solutions{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
         body {
             display: flex;
-            height: 100vh;
         }
         .sidebar {
             width: 250px;
+            height: 100vh;
             background: #343a40;
-            color: white;
-            padding: 15px;
+            color: #fff;
+            padding: 20px;
         }
         .sidebar a {
-            color: white;
+            color: #fff;
+            text-decoration: none;
             display: block;
             padding: 10px;
-            text-decoration: none;
+            margin: 5px 0;
+            transition: background 0.3s;
         }
         .sidebar a:hover {
             background: #495057;
@@ -35,11 +39,11 @@
 <body>
     <div class="sidebar">
         <h2>Gontech Solutions</h2>
-        <a href="{% url 'home' %}"><i class="fas fa-home"></i> Inicio</a>
+        <a href="{% url 'dashboard' %}"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         <a href="{% url 'lista_tickets' %}"><i class="fas fa-ticket-alt"></i> Mesa de Ayuda</a>
-        <a href="{% url 'lista_tecnicos' %}"><i class="fas fa-tools"></i> Técnicos</a>
-        <a href="{% url 'lista_clientes' %}"><i class="fas fa-users"></i> Clientes</a>
-        <a href="{% url 'lista_transacciones' %}"><i class="fas fa-money-bill"></i> Finanzas</a>
+        <a href="{% url 'comunicacion_clientes' %}"><i class="fas fa-envelope"></i> Comunicación con Clientes</a>
+        <a href="{% url 'gestion_usuarios' %}"><i class="fas fa-users-cog"></i> Gestión de Usuarios</a>
+        <a href="{% url 'gestion_proyectos' %}"><i class="fas fa-project-diagram"></i> Gestión de Proyectos</a>
         <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
     </div>
     <div class="content">
